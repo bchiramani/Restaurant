@@ -1,0 +1,42 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>{{title}} Chef</p>
+                    <h2>{{title}} Chef</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #addChefForm="ngForm" (ngSubmit)="addChef()">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="text" [(ngModel)]="chef.name" [ngModelOptions]={standalone:true} class="form-control" id="inputEmail4" placeholder="Name ">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="text" [(ngModel)]="chef.speciality" [ngModelOptions]={standalone:true} class="form-control" id="inputEmail4" placeholder="Speciality">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="number" [(ngModel)]="chef.experince" [ngModelOptions]={standalone:true} class="form-control" id="inputEmail4" placeholder="Exeprience">
+                            </div>
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button href="#" class="btn_4">{{title}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->

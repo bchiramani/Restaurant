@@ -1,0 +1,21 @@
+<!--::exclusive_item_part start::-->
+<section class="exclusive_item_part blog_item_section" style="margin-top: 200px;">
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Popular Dishes</p>
+                    <h2>Our Exclusive Items</h2>
+                </div>
+            </div>
+        </div> -->
+        <app-section-banner [banner]="popularMenuBanner"> </app-section-banner>
+        <div class="row">
+
+            <div class="col-sm-6 col-lg-4 d-none d-sm-block" *ngFor="let c of dishes">
+                <app-plat [platInput]="c"> </app-plat>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::exclusive_item_part end::-->

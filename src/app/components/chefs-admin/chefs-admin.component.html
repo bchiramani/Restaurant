@@ -1,0 +1,28 @@
+<button class="btn btn-success" (click)="addChef()"> Add chef</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Speciality</th>
+            <th scope="col">Experience</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let chef of chefs">
+
+            <th>{{chef._id}}</th>
+            <td>{{chef.name}}</td>
+            <td>{{chef.speciality}}</td>
+            <td>{{chef.experience}}</td>
+            <td>
+                <i class="far fa-eye" (click)="displayChef(chef._id)"></i>
+                <i class="fas fa-trash-alt" (click)="deleteChef(chef._id)"></i>
+                <i class="fas fa-edit" (click)="editChef(chef._id)"></i>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>

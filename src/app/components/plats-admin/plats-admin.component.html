@@ -1,0 +1,26 @@
+<button routerLink="addPlat" class="btn btn-success" (click)="goToAdd()">Add Plats</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col"> Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let plat of plats">
+            <th>{{plat._id}}</th>
+            <td>{{plat.name}}</td>
+            <td>{{plat.price}}</td>
+            <td>{{plat.description}}</td>
+            <td>
+                <i class="far fa-eye" (click)="displayPlat(plat._id)"></i>
+                <i class="fas fa-trash-alt" (click)="deletePlat(plat._id)"></i>
+                <i class="fas fa-edit" (click)="goToEdit(plat._id)"></i>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

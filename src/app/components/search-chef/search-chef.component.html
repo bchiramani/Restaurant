@@ -1,0 +1,53 @@
+<section class="regervation_part section_padding" style="margin-top:100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Seacrh Chef </p>
+                    <h2>Search Chef</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="searchForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" formControlName="speciality" class="form-control" id="inputEmail4" placeholder="Speciality">
+                            </div>
+
+                        </div>
+                        <div class="regerv_btn">
+                            <button href="#" class="btn_4" (click)="search()">Search Chef</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<div *ngIf="findedChefs">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Speciality</th>
+                <th scope="col">Experience</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let chef of findedChefs">
+                <th>{{chef._id}}</th>
+                <td>{{chef.name}}</td>
+                <td>{{chef.speciality}}</td>
+                <td>{{chef.experience}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--::regervation_part end::-->

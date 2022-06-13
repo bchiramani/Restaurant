@@ -1,0 +1,48 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+
+                    <h2>
+                        Add an Admin
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #addAdminForm="ngForm" (ngSubmit)="addAdmin()">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="user.firstName" [ngModelOptions]="{standalone:true}" placeholder="First Name ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="user.lastName" [ngModelOptions]="{standalone:true}" placeholder="Last Name ">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}" placeholder="Password">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" [(ngModel)]="user.tel" [ngModelOptions]="{standalone:true}" placeholder="tel">
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button class="btn_4">Add an admin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->

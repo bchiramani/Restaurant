@@ -1,0 +1,107 @@
+<!--::regervation_part start::-->
+<section class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <p>Sign Up</p>
+                    <h2>Sign Up</h2>
+                    <h1> {{variable1 | asterix}}</h1>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="signupForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="FirstName " formControlName="firstName">
+                            </div>
+                            <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched || signupForm.controls['firstName'].dirty)">
+                                <div *ngIf="signupForm.controls['firstName'].errors.required" class="text-danger">
+                                    firstName is required
+                                </div>
+                                <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="text-danger">
+                                    first name min length is 3
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="LastName " formControlName="lastName">
+                            </div>
+                            <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched || signupForm.controls['lastName'].dirty)">
+                                <div *ngIf="signupForm.controls['lastName'].errors.required" class="text-danger">
+                                    lastName is required
+                                </div>
+                                <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="text-danger">
+                                    last name min length is 3
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="email " formControlName="email">
+                            </div>
+                            <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                                <div *ngIf="signupForm.controls['email'].errors.required" class="text-danger">
+                                    email is required
+                                </div>
+                                <div *ngIf="signupForm.controls['email'].errors.email" class="text-danger">
+                                    invalid email
+                                </div>
+                            </div>
+                            <div style="color: red">
+                                {{errMessage}}
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password" formControlName="password">
+                            </div>
+                            <div *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched || signupForm.controls['password'].dirty)">
+                                <div *ngIf="signupForm.controls['password'].errors.required" class="text-danger">
+                                    password is required
+                                </div>
+                                <div *ngIf="signupForm.controls['password'].errors.minlength" class="text-danger">
+                                    password min length is 5
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="ConfirmPassword" formControlName="confirmPassword">
+                            </div>
+                            <div *ngIf="signupForm.controls['confirmPassword'].invalid &&(signupForm.controls['confirmPassword'].dirty||signupForm.controls['confirmPassword'].touched)">
+                                <div *ngIf="signupForm.controls['confirmPassword'].errors.mustMatch" class="text-danger">
+                                    passwords must match
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="pnone" placeholder="Phone number *" formControlName="tel">
+                            </div>
+                            <div *ngIf="signupForm.controls['tel'].invalid && (signupForm.controls['tel'].touched || signupForm.controls['tel'].dirty)">
+                                <div *ngIf="signupForm.controls['tel'].errors.required" class="text-danger">
+                                    phone number is required
+                                </div>
+                                <div *ngIf="signupForm.controls['tel'].errors.minlength" class="text-danger">
+                                    phone number min length is 8
+                                </div>
+                                <div *ngIf="signupForm.controls['tel'].errors.maxlength" class="text-danger">
+                                    phone number min length is 12
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="regerv_btn">
+                            <button class="btn_4" (click)="signup()">Sign Up </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--::regervation_part end::-->
